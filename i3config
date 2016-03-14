@@ -12,18 +12,13 @@
 # Sets the modifier to the "windows button"
 set $mod Mod4
 
-# Activates jumping back and forth between workspaces
-workspace_auto_back_and_forth yes
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:Monofur 11
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, if you need a lot of unicode glyphs or
-# right-to-left text rendering, you should instead use pango for rendering and
-# chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+
+# Activates jumping back and forth between workspaces
+workspace_auto_back_and_forth yes
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -142,23 +137,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-
-# always start pidgin on workspace 4: im
-assign [class="^Pidgin$"] "4: im"
-
-# start nm-applet
-exec "nm-applet"
-
-# start a terminal on workspace 1: term
-exec i3-msg 'workspace 1: term; exec i3-sensible-terminal;'
-
-# start chromium once on workspace 2: www
-exec i3-msg 'workspace 2: www; exec chromium;' 
-
-# start my mpd-client on workspace 5: music
-# exec --no-startup-id i3-msg 'workspace "5: music"; exec sonata; workspace "1: term"'
-
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
