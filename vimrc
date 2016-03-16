@@ -10,7 +10,6 @@ call vundle#begin()
 "
 " original repos on github
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'myusuf3/numbers.vim' " Relative line numbers 
