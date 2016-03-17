@@ -1,0 +1,7 @@
+User unitfiles probably should be in 
+  ~/.config/systemd/user/
+
+System unitfiles probably should be in 
+  /etc/systemd/system/
+
+Symlinking will be problematic with systemd, so maybe use hardlinks..?

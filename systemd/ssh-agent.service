@@ -1,0 +1,15 @@
+# To use it, add
+#   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# to bash_profile or bashrc or something like that...
+#
+# Best used as user service file.
+[Unit]
+Description=SSH key agent.
+
+[Service]
+Type=forking
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+
+[Install]
+WantedBy=default.target
