@@ -5,7 +5,7 @@ Before=sleep.target
 [Service]
 Type=forking
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -c 333333
+ExecStart=/usr/bin/i3lock -f -s 10 -r 10 # uses i3lock from the aur with blur functionality
 
 [Install]
 WantedBy=sleep.target
