@@ -1,3 +1,3 @@
 function fish_greeting
-	fortune -s | cowsay -f fish | lolcat
+	cowsay -f fish .o/ | lolcat
 end
