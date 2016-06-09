@@ -14,6 +14,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'myusuf3/numbers.vim' " Relative line numbers 
 Plugin 'sirtaj/vim-openscad' " Syntax highlighting for openscad
+Plugin 'dag/vim-fish'        " Syntax highlighting and more for fish scripts
 
 call vundle#end()
 
