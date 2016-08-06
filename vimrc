@@ -5,6 +5,9 @@ filetype off
 " Vundle and plugin stuff
 set rtp+=/home/cakemix/.vim/bundle/Vundle.vim/
 
+" Vundle breaks with fish shell, I think...
+set shell=/usr/bin/bash
+
 call vundle#begin()
 " My Plugins here:
 "
