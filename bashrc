@@ -28,10 +28,13 @@ alias ll='ls -l --color=auto'
 # Use prettier ping command
 alias ping='prettyping'
 
-#################################################
-# Command Prompt customization; Requires:       #
-# https://github.com/magicmonty/bash-git-prompt #
-#################################################
-GIT_PROMPT_ONLY_IN_REPO=0 # show the prompt everywhere
-GIT_PROMPT_THEME=Solarized
-source ~/devel/bash-git-prompt/gitprompt.sh
+################################
+# Command Prompt customization #
+################################
+# colors and git for the prompt
+source ~/.git-prompt.sh
+if [ -n "$BASH_VERSION" ]; then
+  export GIT_PS1_SHOWDIRTYSTATE=true
+  export GIT_PS1_SHOWUNTRACKEDFILES=true
+  export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+fi
