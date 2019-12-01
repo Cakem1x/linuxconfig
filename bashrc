@@ -16,6 +16,8 @@ eval $(thefuck --alias)
 ##########################
 # export the env variable to use the ssh-agent started via systemd --user
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# Add custom scripts to path
+export PATH="${PATH}:${HOME}/devel/linuxconfig/scripts"
 
 ############
 # Aliases: #
@@ -27,6 +29,8 @@ alias la='ls -la --color=auto'
 alias ll='ls -l --color=auto'
 # Use prettier ping command
 alias ping='prettyping'
+# get up one dir quickly
+alias ..='cd ..'
 
 ################################
 # Command Prompt customization #
