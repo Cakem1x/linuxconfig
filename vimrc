@@ -13,13 +13,39 @@ call vundle#begin()
 "
 " original repos on github
 Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'myusuf3/numbers.vim' " Relative line numbers 
 Plugin 'sirtaj/vim-openscad' " Syntax highlighting for openscad
 Plugin 'dag/vim-fish'        " Syntax highlighting and more for fish scripts
 
 call vundle#end()
+
+" ---------------------------------------------------------------------------
+" Syntastic config section
+" ---------------------------------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
+
+
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_always_populate_loc_list = 1 
+"let g:syntastic_python_pylint_post_args = "--max-line-length=120 --max-args=8 --max-attributes=10"
+let g:syntastic_auto_loc_list = 1 
+let g:syntastic_check_on_open = 1 
+let g:syntastic_check_on_wq = 0 
+" Hook for displaying the errors/warnings is called by syntastic.
+" This definition makes sure its size in [#errors, 10].
+function! SyntasticCheckHook(errors)
+  if !empty(a:errors)
+    let g:syntastic_loc_list_height = min([len(a:errors), 10])
+  endif
+endfunction
+" ---------------------------------------------------------------------------
+
 
 " Enable filetype detection again
 filetype plugin indent on
@@ -33,15 +59,17 @@ nnoremap <F4> :YcmCompleter GoTo<CR>
 " ---------------------------------------------------------------------------
 syntax enable       " Enable syntax highlighting
  
-set background=dark " When set to "dark", Vim will try to use colors that look
-                    " good on a dark background. When set to "light", Vim will
-                    " try to use colors that look good on a light background.
-                    " Any other value is illegal.
+" When set to "dark", Vim will try to use colors that look
+" good on a dark background. When set to "light", Vim will
+" try to use colors that look good on a light background.
+" Any other value is illegal.
+set background=dark
 
 "let g:solarized_termtrans = 1 " Don't use the odd color-overlay as background.
 
 colorscheme solarized " Enable solarized colorscheme.
 
+set guifont=Oxygen\ Mono\ 16
 set tabstop=2       " Number of spaces that a <Tab> in the file counts for.
 
 set shiftwidth=2    " Number of spaces to use for each step of (auto)indent.
