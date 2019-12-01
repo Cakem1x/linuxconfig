@@ -11,14 +11,6 @@ set -o vi
 # Use thefuck for command correction
 eval $(thefuck --alias)
 
-##########################
-# Environment Variables: #
-##########################
-# export the env variable to use the ssh-agent started via systemd --user
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-# Add custom scripts to path
-export PATH="${PATH}:${HOME}/devel/linuxconfig/scripts"
-
 ############
 # Aliases: #
 ############
